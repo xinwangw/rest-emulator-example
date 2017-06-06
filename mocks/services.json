@@ -1,0 +1,80 @@
+{
+    "/api/users": {
+        "GET": {
+            "default": {
+                "data": [{
+                    "name": "John",
+                    "age": 5,
+                    "gender": "M",
+                    "birthday": "2011-03-01"
+                }, {
+                    "name": "Adam",
+                    "age": 6,
+                    "gender": "M",
+                    "birthday": "2011-04-01"
+                }, {
+                    "name": "Eva",
+                    "age": 16,
+                    "gender": "F",
+                    "birthday": "2000-03-21"
+                }],
+                "code": 200,
+                "timeout": 0
+            },
+            "blank": {
+                "data": [],
+                "code": 200,
+                "timeout": 0,
+                "headers": {
+                    "ETag": "12345"
+                }
+            },
+            "increase": {
+                "data": [{
+                    "name": "John"
+                }, {
+                    "name": "Adam"
+                }, {
+                    "name": "Clark"
+                }, {
+                    "name": "Earl"
+                }],
+                "code": 200,
+                "timeout": 0
+            }
+        },
+        "POST": {
+            "default": {
+                "data": {
+                    "success": true
+                },
+                "code": 201
+            },
+            "error": {
+                "code": 405
+            }
+        }
+    },
+    "/api/cities": {
+        "GET": {
+            "data": [{
+                "name": "New York"
+            }, {
+                "name": "Miami"
+            }],
+            "query": {
+                "name=Miami": {
+                    "data": [{
+                        "name": "Miami"
+                    }],
+                    "code": 500
+                },
+                "name=New York": {
+                    "data": [{
+                        "name": "New York"
+                    }]
+                }
+            }
+        }
+    }
+}

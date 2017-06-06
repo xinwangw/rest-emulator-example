@@ -1,0 +1,15 @@
+{
+  "name": "rest-emulator",
+  "version": "1.0.0",
+  "description": "test restful emulator",
+  "main": "rest-emulator.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "mock-server config.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-rest-emulator": "^1.2.0"
+  }
+}
